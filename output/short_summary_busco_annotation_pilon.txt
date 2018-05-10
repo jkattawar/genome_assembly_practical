@@ -1,0 +1,15 @@
+# BUSCO version is: 3.0.2 
+# The lineage dataset is: actinopterygii_odb9 (Creation date: 2016-02-13, number of species: 20, number of BUSCOs: 4584)
+# To reproduce this run: python ../../busco/scripts/run_BUSCO.py -i data/pilon.fasta -o busco_annotation_pilon -l ../../clownfish_data/data/busco/actinopterygii_odb9/ -m genome -c 20 -sp zebrafish
+#
+# Summarized benchmarking in BUSCO notation for file data/pilon.fasta
+# BUSCO was run in mode: genome
+
+	C:96.4%[S:93.2%,D:3.2%],F:1.4%,M:2.2%,n:4584
+
+	4418	Complete BUSCOs (C)
+	4271	Complete and single-copy BUSCOs (S)
+	147	Complete and duplicated BUSCOs (D)
+	62	Fragmented BUSCOs (F)
+	104	Missing BUSCOs (M)
+	4584	Total BUSCO groups searched

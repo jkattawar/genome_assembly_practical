@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -q bigmem
+#PBS -l nodes=1:ppn=24
+#PBS -l walltime=24:00:00
+#PBS -N pilon_improvement
+#PBS -o pilon.out
+#PBS -j oe
+#PBS -A loni_selu_gt
+#PBS -m abe
+#PBS -M jerry.kattawar@selu.edu
+
+
+datapath=/work/kattawar/clownfish_data/final_practical
+cd $datapath
+
+java -Xmx120G -jar /work/kattawar/pilon-1.22.jar --threads 20 --genome data/Hybrid_assembly.fasta --outdir data/  --changes --tracks --diploid --bam sorted.bam > illumina-pilon.log
+

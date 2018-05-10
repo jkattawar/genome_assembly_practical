@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -q workq
+#PBS -l nodes=1:ppn=20
+#PBS -l walltime=24:00:00
+#PBS -N busco_hybrid_quantification
+#PBS -o busco_hybrid.out
+#PBS -j oe
+#PBS -A loni_selu_gt
+#PBS -m abe
+#PBS -M jerry.kattawar@selu.edu
+
+
+module load boost/1.55.0/INTEL-14.0.2
+
+export AUGUSTUS_CONFIG_PATH=/work/kattawar/augustus/config/
+
+datapath=/work/kattawar/clownfish_data/final_practical/
+cd $datapath
+python ../../busco/scripts/run_BUSCO.py -o busco_annotation_hybrid -l ../../clownfish_data/data/busco/actinopterygii_odb9 -i data/Hybrid_assembly.fasta -m geno -c 20 -sp zebrafish

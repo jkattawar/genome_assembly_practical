@@ -1,0 +1,14 @@
+#!/bin/bash
+#PBS -q workq
+#PBS -l nodes=1:ppn=20
+#PBS -l walltime=8:00:00
+#PBS -N mini_map
+#PBS -o mini_map_output
+#PBS -j oe
+#PBS -A loni_selu_gt
+#PBS -m abe
+#PBS -M jerry.kattawar@selu.edu
+
+cd /work/kattawar/clownfish_data/final_practical
+
+/work/kattawar/clownfish_data/final_practical/minimap2-2.10_x64-linux/minimap2 -ax sr -t 20 data/Hybrid_assembly.fasta data/mega.fq > aln.sam

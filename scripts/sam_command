@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -q workq
+#PBS -l nodes=1:ppn=20
+#PBS -l walltime=4:00:00
+#PBS -N convert_sam_to_bam
+#PBS -o aln.sorted.bam
+#PBS -j oe
+#PBS -A loni_selu_gt
+#PBS -m abe
+#PBS -M jerry.kattawar@selu.edu
+
+
+module load samtools
+cd /work/kattawar/clownfish_data/final_practical
+samtools view -S -@ 20 -b aln.sam > aln.bam
+#samtools merge mega.bam aln-peSRR6255796.fastq.sam.bam aln-peSRR6255798.fastq.sam.bam aln-peSRR6255799.fastq.sam.bam aln-peSRR6262202.fastq.sam.bam aln-peSRR6266482.fastq.sam.bam aln-peSRR6266483.fastq.sam.bam aln-peSRR6266484.fastq.sam.bam
+/work/kattawar/sambamba_v0.6.6 sort -o sorted.bam -p -t 20 aln.bam
+#samtools sort -@ 20 -m 3.2 mega.bam -o mega.sorted.bam
+samtools index -@ 20 aln.sorted.bam

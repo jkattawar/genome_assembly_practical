@@ -1,0 +1,148 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    490317.qb3
+Username:  kattawar
+Group:     loniusers
+Date:      09-May-2018 19:58
+Node:      qb117 (58300)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb117
+
+A total of 20 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb117 19:58:32 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 09-May-2018 19:58:32
+------------------------------------------------------
+WARNING	An augustus species is mentioned in the config file, dataset default species (human) will be ignored
+INFO	****************** Start a BUSCO 3.0.2 analysis, current time: 05/09/2018 19:58:33 ******************
+INFO	Configuration loaded from /work/kattawar/busco/scripts/../config/config.ini
+INFO	Init tools...
+INFO	Check dependencies...
+INFO	Check input file...
+INFO	To reproduce this run: python ../../busco/scripts/run_BUSCO.py -i data/pilon.fasta -o busco_annotation_pilon -l ../../clownfish_data/data/busco/actinopterygii_odb9/ -m genome -c 20 -sp zebrafish
+INFO	Mode is: genome
+INFO	The lineage dataset is: actinopterygii_odb9 (eukaryota)
+INFO	Temp directory is ./tmp/
+INFO	****** Phase 1 of 2, initial predictions ******
+INFO	****** Step 1/3, current time: 05/09/2018 19:58:44 ******
+INFO	Create blast database...
+INFO	[makeblastdb]	Building a new DB, current time: 05/09/2018 19:58:47
+INFO	[makeblastdb]	New DB name:   /work/kattawar/clownfish_data/final_practical/tmp/busco_annotation_pilon_3755220143
+INFO	[makeblastdb]	New DB title:  data/pilon.fasta
+INFO	[makeblastdb]	Sequence type: Nucleotide
+INFO	[makeblastdb]	Keep Linkouts: T
+INFO	[makeblastdb]	Keep MBits: T
+INFO	[makeblastdb]	Maximum file size: 1000000000B
+INFO	[makeblastdb]	Adding sequences from FASTA; added 6404 sequences in 14.5296 seconds.
+INFO	[makeblastdb]	1 of 1 task(s) completed at 05/09/2018 19:59:02
+INFO	Running tblastn, writing output to /work/kattawar/clownfish_data/final_practical/run_busco_annotation_pilon/blast_output/tblastn_busco_annotation_pilon.tsv...
+INFO	[tblastn]	1 of 1 task(s) completed at 05/09/2018 20:24:09
+INFO	****** Step 2/3, current time: 05/09/2018 20:24:09 ******
+INFO	Maximum number of candidate contig per BUSCO limited to: 3
+INFO	Getting coordinates for candidate regions...
+INFO	Pre-Augustus scaffold extraction...
+INFO	Running Augustus prediction using zebrafish as species:
+INFO	[augustus]	Please find all logs related to Augustus errors here: /work/kattawar/clownfish_data/final_practical/run_busco_annotation_pilon/augustus_output/augustus.log
+INFO	[augustus]	690 of 6891 task(s) completed at 05/09/2018 20:40:54
+INFO	[augustus]	1379 of 6891 task(s) completed at 05/09/2018 20:59:45
+INFO	[augustus]	2068 of 6891 task(s) completed at 05/09/2018 21:16:01
+INFO	[augustus]	2757 of 6891 task(s) completed at 05/09/2018 21:32:42
+INFO	[augustus]	3446 of 6891 task(s) completed at 05/09/2018 21:46:31
+INFO	[augustus]	4135 of 6891 task(s) completed at 05/09/2018 21:59:18
+INFO	[augustus]	4824 of 6891 task(s) completed at 05/09/2018 22:13:54
+INFO	[augustus]	5513 of 6891 task(s) completed at 05/09/2018 22:27:26
+INFO	[augustus]	6202 of 6891 task(s) completed at 05/09/2018 22:40:22
+INFO	[augustus]	6891 of 6891 task(s) completed at 05/09/2018 22:57:12
+INFO	Extracting predicted proteins...
+INFO	****** Step 3/3, current time: 05/09/2018 22:58:48 ******
+INFO	Running HMMER to confirm orthology of predicted proteins:
+INFO	[hmmsearch]	689 of 6890 task(s) completed at 05/09/2018 22:58:55
+INFO	[hmmsearch]	1378 of 6890 task(s) completed at 05/09/2018 22:58:58
+INFO	[hmmsearch]	2756 of 6890 task(s) completed at 05/09/2018 22:59:02
+INFO	[hmmsearch]	3445 of 6890 task(s) completed at 05/09/2018 22:59:04
+INFO	[hmmsearch]	4823 of 6890 task(s) completed at 05/09/2018 22:59:08
+INFO	[hmmsearch]	5512 of 6890 task(s) completed at 05/09/2018 22:59:09
+INFO	[hmmsearch]	6890 of 6890 task(s) completed at 05/09/2018 22:59:12
+INFO	Results:
+INFO	C:95.1%[S:92.0%,D:3.1%],F:2.7%,M:2.2%,n:4584
+INFO	4358 Complete BUSCOs (C)
+INFO	4215 Complete and single-copy BUSCOs (S)
+INFO	143 Complete and duplicated BUSCOs (D)
+INFO	126 Fragmented BUSCOs (F)
+INFO	100 Missing BUSCOs (M)
+INFO	4584 Total BUSCO groups searched
+INFO	****** Phase 2 of 2, predictions using species specific training ******
+INFO	****** Step 1/3, current time: 05/09/2018 22:59:15 ******
+INFO	Extracting missing and fragmented buscos from the ancestral_variants file...
+INFO	Running tblastn, writing output to /work/kattawar/clownfish_data/final_practical/run_busco_annotation_pilon/blast_output/tblastn_busco_annotation_pilon_missing_and_frag_rerun.tsv...
+INFO	[tblastn]	1 of 1 task(s) completed at 05/09/2018 23:13:01
+INFO	Maximum number of candidate contig per BUSCO limited to: 3
+INFO	Getting coordinates for candidate regions...
+INFO	****** Step 2/3, current time: 05/09/2018 23:13:04 ******
+INFO	Training Augustus using Single-Copy Complete BUSCOs:
+INFO	Converting predicted genes to short genbank files at 05/09/2018 23:13:04...
+INFO	All files converted to short genbank files, now running the training scripts at 05/09/2018 23:37:00...
+INFO	Pre-Augustus scaffold extraction...
+INFO	Re-running Augustus with the new metaparameters, number of target BUSCOs: 226
+INFO	[augustus]	43 of 428 task(s) completed at 05/09/2018 23:38:10
+INFO	[augustus]	86 of 428 task(s) completed at 05/09/2018 23:38:38
+INFO	[augustus]	129 of 428 task(s) completed at 05/09/2018 23:39:11
+INFO	[augustus]	172 of 428 task(s) completed at 05/09/2018 23:39:46
+INFO	[augustus]	214 of 428 task(s) completed at 05/09/2018 23:40:27
+INFO	[augustus]	257 of 428 task(s) completed at 05/09/2018 23:40:59
+INFO	[augustus]	300 of 428 task(s) completed at 05/09/2018 23:41:29
+INFO	[augustus]	343 of 428 task(s) completed at 05/09/2018 23:42:03
+INFO	[augustus]	386 of 428 task(s) completed at 05/09/2018 23:42:34
+INFO	[augustus]	428 of 428 task(s) completed at 05/09/2018 23:44:33
+INFO	Extracting predicted proteins...
+INFO	****** Step 3/3, current time: 05/09/2018 23:44:38 ******
+INFO	Running HMMER to confirm orthology of predicted proteins:
+INFO	[hmmsearch]	86 of 428 task(s) completed at 05/09/2018 23:44:38
+INFO	[hmmsearch]	129 of 428 task(s) completed at 05/09/2018 23:44:38
+INFO	[hmmsearch]	172 of 428 task(s) completed at 05/09/2018 23:44:38
+INFO	[hmmsearch]	257 of 428 task(s) completed at 05/09/2018 23:44:39
+INFO	[hmmsearch]	343 of 428 task(s) completed at 05/09/2018 23:44:39
+INFO	[hmmsearch]	386 of 428 task(s) completed at 05/09/2018 23:44:39
+INFO	[hmmsearch]	428 of 428 task(s) completed at 05/09/2018 23:44:39
+INFO	Results:
+INFO	C:96.4%[S:93.2%,D:3.2%],F:1.4%,M:2.2%,n:4584
+INFO	4418 Complete BUSCOs (C)
+INFO	4271 Complete and single-copy BUSCOs (S)
+INFO	147 Complete and duplicated BUSCOs (D)
+INFO	62 Fragmented BUSCOs (F)
+INFO	104 Missing BUSCOs (M)
+INFO	4584 Total BUSCO groups searched
+INFO	BUSCO analysis done with WARNING(s). Total running time: 13583.7463751 seconds
+INFO	Results written in /work/kattawar/clownfish_data/final_practical/run_busco_annotation_pilon/
+
+------------------------------------------------------
+Running PBS epilogue script    - 09-May-2018 23:44:56
+------------------------------------------------------
+Checking node qb117 (MS)
+Checking node qb117 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 09-May-2018 23:44:58
+------------------------------------------------------
+Exit Status:     0
+Job ID:          490317.qb3
+Username:        kattawar
+Group:           loniusers
+Job Name:        busco_pilon_quantification
+Session Id:      58299
+Resource Limits: ncpus=1,neednodes=1:ppn=20,nodes=1:ppn=20,walltime=24:00:00
+Resources Used:  cput=69:30:43,mem=27888080kb,vmem=30121304kb,walltime=03:46:25
+Queue Used:      workq
+Account String:  loni_selu_gt
+Node:            qb117
+Process id:      13810
+Last status:     09-May-2018:23:01 PBS_job=490317.qb3 user=kattawar allocation=loni_selu_gt queue=workq total_load=20.28 cpu_hours=0.53 wall_hours=2.15 unused_nodes=0 total_nodes=1 ppn=20 avg_load=20.28 avg_cpu=1980% avg_mem=10167mb avg_vmem=12237mb top_proc=kattawar:augustus:qb117:858M:839M:0.0hr:100% toppm=kattawar:augustus:qb117:1479M:1458M node_processes=23 avg_avail_mem=60793mb min_avail_mem=60793mb reverified_avg_load=5.43
+------------------------------------------------------
